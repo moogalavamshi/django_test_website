@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
 from django.shortcuts import render
 from .models import Album
 
@@ -12,7 +12,12 @@ def index(request):
 
 
 def detail_view(request, album_id):
-    # html = '<h2> the album id is ' + album_id + '</h2>'
-    html = ''
+    try:
+        album = Album.objects.get(id=album_id)
+    except Album.DoesNotExist:
+        raise Http404("Album does not exist")
+    return render(request, 'music/detail.html', {'album': album})
 
-    return HttpResponse(html)
+
+
+

@@ -5,6 +5,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script type="text/javascript" src="{% static 'music/js/test.js' %}"></script>
 
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'music:index' %}">My_Brand</a>
+        </div>
+    </div>
+</nav>
+
+
 {% if all_albums %}
     <ul>
         {% for album in all_albums %}

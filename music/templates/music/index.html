@@ -1,7 +1,14 @@
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'music/css/music.css' %}"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="{% static 'music/js/test.js' %}"></script>
+
 {% if all_albums %}
     <ul>
         {% for album in all_albums %}
-        <li><a href = "{% url 'detail' album.id %}"> {{ album.album_title }}</a></li>
+        <li><a href = "{% url 'music:detail' album.id %}"> {{ album.album_title }}</a></li>
         {% endfor %}
     </ul>
 {% else %}

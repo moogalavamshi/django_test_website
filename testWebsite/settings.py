@@ -25,7 +25,10 @@ SECRET_KEY = 'cey0w6zxv$cj012l2v8@s4e8fqn+*94frni!r$c^phrj98+k^-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.0.3',
+    'vmoogala.ddns.net'
+]
 
 
 # Application definition
